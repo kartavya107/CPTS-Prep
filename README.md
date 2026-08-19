@@ -20,3 +20,4 @@ I follow IppSec's CPTS Prep series and frequently consult his walkthroughs when 
 This section lists each HackTheBox box I have worked on with a short name and URL.
 
 - Forest — https://app.hackthebox.com/machines/Forest
+- Bashed - https://app.hackthebox.com/machiens/Bashed
