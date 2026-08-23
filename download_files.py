@@ -125,6 +125,7 @@ def main():
     )
 
     parser.add_argument(
+        "-d",
         "--directory",
         required=True,
         help="Local directory where PNG files should be saved."
@@ -138,9 +139,9 @@ def main():
 
     parser.add_argument(
         "--port",
-        required=True,
         type=int,
-        help="Port of the Python HTTP server."
+        default=80,
+        help="Port of the Python HTTP server. Default: 80."
     )
 
     args = parser.parse_args()
