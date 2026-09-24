@@ -379,15 +379,15 @@ And I got successful login only for the user `emily`. I went to Bloodhound to ma
 
 And I noticed that the user `emily` was a member of the group `Remote Management Users`, which means that we can use `evil-winrm` to access the host of the user `emily` remotely. Keeping that in mind, I moved further with more reconnaissance.
 
-After looking at `Outbound Object Controls` for the user `emily`, I noticed that the user `emily` has `GenericWrite` privileges over the user `ethan`, which means that we can `Force Change Password` of the user `ethan` by authenticating with the user `emily`.
+After looking at `Outbound Object Controls` for the user `emily`, I noticed that the user `emily` has `GenericWrite` privileges over the user `ethan`, which means that we can get the password hash of the user `ethan` to try to crack it offline, by using the credentials of the user `emily`.
 
 ![](images/image-13.png)
 
-Keeping that in mind, I moved further & marked the user `Ethan` as owned & checked his privileges over the domain.
+Keeping that in mind, I moved further & marked the user `ethan` as owned & checked his privileges over the domain.
 
 ![](images/image-14.png)
 
-I found out that the user `ethan` has `DCSync` privileges over the `administrator` user, which means that we can grab the password hash for the `administrator` user by authenticating with the credentials of the user `ethan`. I proceeded with changing the password for the user `ethan` first, following the same methodology as I used for the previous domain users.
+I found out that the user `ethan` has `DCSync` privileges over the `administrator` user, which means that we can grab the password hash for the `administrator` user by authenticating with the credentials of the user `ethan`. I proceeded with retrieving the password hash for the user `ethan` first to try to crack it offline.
 
 ```
 git clone https://github.com/ShutdownRepo/targetedKerberoast                                                                  Cloning into 'targetedKerberoast'...                                                                                                    
